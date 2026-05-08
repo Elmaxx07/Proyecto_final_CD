@@ -223,6 +223,9 @@ corr_x1_x2 = df_clean['fecha_alta'].corr(df_clean['latitud'])
 print('Correlación X1 (fecha_alta) con Y:', corr_x1_y)
 print('Correlación X2 (latitud) con Y:', corr_x2_y)
 print('Correlación entre X1 y X2:', corr_x1_x2)
+
+print('Matriz de correlación:')
+print(df_clean[['fecha_alta', 'latitud', 'per_ocu']].corr())
 print('-' * 80)
 print('-' * 80)
 
@@ -303,4 +306,6 @@ print(f'  p-valor: {bp_pvalue:.6g}')
 print(f'  Interpretación: {bp_desc}')
 print('-' * 80)
 
+plt.savefig('dashboard_max.png', dpi=300, bbox_inches='tight')
+print('Dashboard guardado')
 plt.show()
